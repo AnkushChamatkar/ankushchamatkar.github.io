@@ -1,0 +1,404 @@
+/* ===========================
+   ANIMATIONS
+   =========================== */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes floatItem {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.02);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 217, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.8);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scroll Trigger Animations (GSAP) */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.scroll-animate-left {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.scroll-animate-right {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.scroll-animate.animated,
+.scroll-animate-left.animated,
+.scroll-animate-right.animated {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+/* Skill Item Hover */
+.skill-item {
+  position: relative;
+}
+
+.skill-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  border-radius: 20px;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.skill-item:hover::before {
+  opacity: 0.1;
+}
+
+/* Timeline Animation */
+.timeline .experience-item {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.timeline .experience-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline .experience-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline .experience-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline .experience-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline .experience-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Card Hover Effects */
+.card-hover-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.card-hover-effect:hover::after {
+  left: 100%;
+}
+
+/* Achievement Card Animation */
+.achievement-card {
+  position: relative;
+}
+
+.achievement-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(0, 217, 255, 0.1) 100%);
+  opacity: 0;
+  border-radius: 12px;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.achievement-card:hover::after {
+  opacity: 1;
+}
+
+/* Section Title Animation */
+.section-title {
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Button Ripple Effect */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Stagger Animation for Lists */
+.stagger-item {
+  animation: fadeInUp 0.6s ease backwards;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.05s; }
+.stagger-item:nth-child(2) { animation-delay: 0.1s; }
+.stagger-item:nth-child(3) { animation-delay: 0.15s; }
+.stagger-item:nth-child(4) { animation-delay: 0.2s; }
+.stagger-item:nth-child(5) { animation-delay: 0.25s; }
+.stagger-item:nth-child(6) { animation-delay: 0.3s; }
+.stagger-item:nth-child(7) { animation-delay: 0.35s; }
+.stagger-item:nth-child(8) { animation-delay: 0.4s; }
+
+/* Loader Animation */
+.loader-icon {
+  animation: spin 3s linear infinite;
+}
+
+.loader-name {
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.loader-subtitle {
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.loader-status {
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+/* Hero Title Animation */
+.hero-title {
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.hero-subtitle {
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-description {
+  animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+.hero-statement {
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.hero-cta {
+  animation: fadeInUp 0.8s ease 0.7s both;
+}
+
+.hero-visual {
+  animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+/* Navigation Animations */
+.navbar {
+  animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Smooth Page Transitions */
+main {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Loading State */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+/* Text Gradient Animation */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Focus Visible for Accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  :root {
+    --accent-primary: #00ffff;
+    --accent-secondary: #ff00ff;
+  }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .footer,
+  .back-to-top,
+  .theme-toggle,
+  .hamburger {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    color: #0066cc;
+    text-decoration: underline;
+  }
+
+  .hero-visual,
+  .contact-cta {
+    display: none;
+  }
+}

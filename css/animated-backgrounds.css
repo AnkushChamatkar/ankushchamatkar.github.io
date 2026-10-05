@@ -1,0 +1,531 @@
+/* ===========================
+   ANIMATED SECTION BACKGROUNDS
+   No files needed - Pure CSS!
+   =========================== */
+
+/* ===========================
+   HERO SECTION - Floating Particles
+   =========================== */
+
+.hero {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(100, 100, 100, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(100, 100, 100, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(100, 100, 100, 0.06) 0%, transparent 50%);
+  animation: heroGlow 8s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes heroGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   ABOUT SECTION - Animated Grid
+   =========================== */
+
+.about {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(100, 100, 100, 0.02) 0px, rgba(100, 100, 100, 0.02) 1px, transparent 1px, transparent 50px),
+    repeating-linear-gradient(90deg, rgba(100, 100, 100, 0.02) 0px, rgba(100, 100, 100, 0.02) 1px, transparent 1px, transparent 50px);
+  animation: gridShift 20s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes gridShift {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 50px 50px, 50px 50px;
+  }
+}
+
+[data-theme="light"] .about::before {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.01) 0px, rgba(0, 0, 0, 0.01) 1px, transparent 1px, transparent 50px),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.01) 0px, rgba(0, 0, 0, 0.01) 1px, transparent 1px, transparent 50px);
+}
+
+.about .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   EXPERIENCE SECTION - Wave Effect
+   =========================== */
+
+.experience {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.experience::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(90deg,
+      transparent 0%,
+      rgba(100, 100, 100, 0.05) 25%,
+      transparent 50%,
+      rgba(100, 100, 100, 0.05) 75%,
+      transparent 100%
+    );
+  background-size: 200% 100%;
+  animation: waveFlow 15s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes waveFlow {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.experience .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   ACHIEVEMENTS SECTION - Pulse Glow
+   =========================== */
+
+.achievements {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.achievements::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(100, 100, 100, 0.1) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: pulseGlow 4s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.3;
+  }
+}
+
+.achievements .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   SKILLS SECTION - Gradient Shift
+   =========================== */
+
+.skills {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg,
+    transparent 0%,
+    rgba(100, 100, 100, 0.03) 25%,
+    transparent 50%,
+    rgba(100, 100, 100, 0.03) 75%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.skills .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   AUTOMATION SECTION - Floating Orbs
+   =========================== */
+
+.automation {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.automation::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(100, 100, 100, 0.08) 0%, transparent 70%);
+  animation: float 8s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.automation::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(100, 100, 100, 0.06) 0%, transparent 70%);
+  animation: float 10s ease-in-out infinite reverse;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.automation .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   PROJECTS SECTION - Dot Matrix
+   =========================== */
+
+.projects {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.projects::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle, rgba(100, 100, 100, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: dotsFloat 20s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes dotsFloat {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+.projects .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   LEARNING SECTION - Flowing Lines
+   =========================== */
+
+.learning {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.learning::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(90deg,
+      transparent,
+      rgba(100, 100, 100, 0.1) 50%,
+      transparent
+    ),
+    linear-gradient(180deg,
+      transparent,
+      rgba(100, 100, 100, 0.05) 50%,
+      transparent
+    );
+  background-size: 50px 50px;
+  animation: lineFlow 10s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes lineFlow {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 50px 50px, 0 50px;
+  }
+}
+
+.learning .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   EDUCATION SECTION - Soft Fade
+   =========================== */
+
+.education {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.education::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center top, rgba(100, 100, 100, 0.08) 0%, transparent 60%);
+  animation: fadePulse 6s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes fadePulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.education .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   CONTACT SECTION - Spiral Glow
+   =========================== */
+
+.contact {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  background: conic-gradient(from 0deg,
+    rgba(100, 100, 100, 0.1) 0deg,
+    rgba(100, 100, 100, 0.05) 90deg,
+    rgba(100, 100, 100, 0.1) 180deg,
+    rgba(100, 100, 100, 0.05) 270deg,
+    rgba(100, 100, 100, 0.1) 360deg
+  );
+  transform: translate(-50%, -50%);
+  animation: spiralRotate 20s linear infinite;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes spiralRotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.contact .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   FOOTER SECTION - Subtle Shimmer
+   =========================== */
+
+.footer {
+  position: relative;
+  background: var(--bg-secondary);
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   REDUCED MOTION - Accessibility
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .about::before,
+  .experience::before,
+  .achievements::before,
+  .skills::before,
+  .automation::before,
+  .automation::after,
+  .projects::before,
+  .learning::before,
+  .education::before,
+  .contact::before,
+  .footer::before {
+    animation: none;
+  }
+}
+
+/* ===========================
+   RESPONSIVE - Optimize for Mobile
+   =========================== */
+
+@media (max-width: 768px) {
+  .hero::before {
+    background: radial-gradient(circle at 50% 50%, rgba(100, 100, 100, 0.08) 0%, transparent 50%);
+  }
+
+  .automation::before,
+  .automation::after {
+    display: none;
+  }
+
+  .projects::before {
+    background-size: 30px 30px;
+  }
+
+  .about::before,
+  .learning::before {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero::before,
+  .about::before,
+  .experience::before {
+    opacity: 0.3;
+  }
+
+  .contact::before {
+    width: 250px;
+    height: 250px;
+  }
+}
